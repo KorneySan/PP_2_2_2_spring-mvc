@@ -18,8 +18,7 @@ public class CarController {
     public String printWelcome(Integer count, ModelMap model) {
         List<String> messages = new ArrayList<>();
         CarService carService = new CarServiceImpl();
-        int realCount = ((count == null) || (count < 1) || (count > carService.listCars().size())) ? carService.listCars().size() : count;
-        List<Car> cars = carService.listCarsFirst(realCount);
+        List<Car> cars = carService.listCarsFirst(count);
         for (Car car : cars) {
             messages.add(car.toString());
         }

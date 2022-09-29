@@ -8,9 +8,9 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService{
     @Override
-    public List<Car> listCarsFirst(int count) {
+    public List<Car> listCarsFirst(Integer count) {
         List<Car> carsList = Car.getCarsList();
-        int realCount = count > carsList.size() ? carsList.size() : count;
+        int realCount = ((count == null) || (count < 1) || (count > carsList.size())) ? carsList.size() : count;
         return carsList.subList(0, realCount);
     }
 }

@@ -9,5 +9,5 @@ public interface CarService {
         return Car.getCarsList();
     }
 
-    List<Car> listCarsFirst(int count);
+    List<Car> listCarsFirst(Integer count);
 }
