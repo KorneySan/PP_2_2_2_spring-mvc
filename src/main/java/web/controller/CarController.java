@@ -15,7 +15,7 @@ public class CarController {
     @GetMapping()
     public String printWelcome(Integer count, ModelMap model) {
         List<String> messages = new ArrayList<>();
-        messages.addAll(new CarServiceImpl().listCarsStringFirst(count));
+        new CarServiceImpl().listCarsFirst(count).forEach(car -> messages.add(car.toString()));
         model.addAttribute("messages", messages);
         return "cars";
     }

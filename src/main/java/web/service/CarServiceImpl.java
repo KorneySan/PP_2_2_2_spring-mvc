@@ -3,7 +3,6 @@ package web.service;
 import org.springframework.stereotype.Service;
 import web.model.Car;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,15 +12,5 @@ public class CarServiceImpl implements CarService{
         List<Car> carsList = Car.getCarsList();
         int realCount = ((count == null) || (count < 1) || (count > carsList.size())) ? carsList.size() : count;
         return carsList.subList(0, realCount);
-    }
-
-    @Override
-    public List<String> listCarsStringFirst(Integer count) {
-        List<Car> carsList = listCarsFirst(count);
-        List<String> carsStringList = new ArrayList<>();
-        for (Car car : carsList) {
-            carsStringList.add(car.toString());
-        }
-        return carsStringList;
     }
 }

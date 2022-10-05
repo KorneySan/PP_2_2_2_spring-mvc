@@ -7,5 +7,4 @@ import java.util.List;
 public interface CarService {
 
     List<Car> listCarsFirst(Integer count);
-    List<String> listCarsStringFirst(Integer count);
 }
